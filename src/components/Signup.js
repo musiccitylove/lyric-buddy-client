@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Landing extends React.Component {
+class Signup extends React.Component {
   state = {  }
   render() { 
     return ( 
@@ -17,7 +17,7 @@ class Landing extends React.Component {
     <label for="confirm">Confirm Password</label>
     <input type="password" placeholder="Enter Same Password" name="confirm" required />
 
-    <button type="submit">Login</button>
+    <button type="submit">Signup</button>
     <label>
       <input type="checkbox" checked="checked" name="remember" /> Remember me
     </label>
@@ -28,4 +28,4 @@ class Landing extends React.Component {
   }
 }
  
-export default Landing;
+export default Signup;

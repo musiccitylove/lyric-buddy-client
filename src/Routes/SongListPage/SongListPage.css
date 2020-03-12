@@ -1,0 +1,4 @@
+.FullView {
+display: flex;
+flex-direction: row;
+}
