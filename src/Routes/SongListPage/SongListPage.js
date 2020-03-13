@@ -3,18 +3,23 @@ import SongsContext from '../../context/SongsContext';
 import Listitem from '../../components/Listitem';
 import Songview from '../../components/Songview';
 import './SongListPage.css'
+import Keymenu from '../../components/Keymenu'
 
 class SongListPage extends React.Component {
   state = {  }
   static contextType = SongsContext;
   render() { 
     // this.context.songs
-    console.log(this.props.match.params.songid)
-    const song = this.context.songs;
-    const songid = this.props.match.params.songid-1;
+    console.log(typeof this.props.match.params.songid)
+    const song = this.context.songs.find(song => song.id == this.props.match.params.songid );
     console.log(song)
     return ( 
       <div className= 'FullView'>
+      <header>
+        <h1>My Songs</h1>
+        <button>Create A Song</button>
+        <Keymenu label={'Sort By Key'}/>        
+      </header>
       <section className='SongList'>
         <ul>
           {this.context.songs.map(song =>
@@ -32,7 +37,7 @@ class SongListPage extends React.Component {
       <section className='FullSong'>
         <Songview 
           song={song}
-          songid={songid}
+          
         />
       </section>
       </div>

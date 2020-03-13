@@ -5,6 +5,7 @@ import SongListPage from './Routes/SongListPage/SongListPage'
 import config from './config';
 import ErrorBoundary from './ErrorBoundary';
 import SongsContext from './context/SongsContext';
+import CreateASong from './Routes/CreateASong/CreateASong'
 
 class App extends Component {
     state = {
@@ -41,6 +42,7 @@ class App extends Component {
           
           <Route exact path="/" component={Landing} />
           <Route path="/songs/:songid" component={SongListPage} />
+          <Route path="/create" component={CreateASong} />
         </ErrorBoundary>  
       </SongsContext.Provider> 
     )
