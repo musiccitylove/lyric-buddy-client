@@ -69,7 +69,7 @@ class CreateFrom extends React.Component {
         return res.json();
       })
       .then((resp) => {
-        // this.context.addSong(resp);
+        this.context.addSong(resp);
         console.log(this.context)
         this.props.history.push('/songs');
       })

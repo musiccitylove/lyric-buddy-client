@@ -29,11 +29,20 @@ class App extends Component {
         });
   }
 
+  handleAddSong = song => {
+    
+    this.setState({
+        songs: [...this.state.songs, song] // adds our new note to the end of the notes array
+    });
+};
+
 
   render() {
     const { songs } = this.state;
     const value = {
       songs,
+      addSong: this.handleAddSong
+
     }
 
     return(
