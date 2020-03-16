@@ -3,7 +3,7 @@ import SongsContext from '../../context/SongsContext';
 import Listitem from '../../components/Listitem';
 import Songview from '../../components/Songview';
 import './SongListPage.css'
-import Keymenu from '../../components/Keymenu'
+import Header from '../../components/Header'
 
 class SongListPage extends React.Component {
   state = {  }
@@ -15,11 +15,7 @@ class SongListPage extends React.Component {
     console.log(song)
     return ( 
       <div className= 'FullView'>
-      <header>
-        <h1>My Songs</h1>
-        <button>Create A Song</button>
-        <Keymenu label={'Sort By Key'}/>        
-      </header>
+        <Header />
       <section className='SongList'>
         <ul>
           {this.context.songs.map(song =>

@@ -41,6 +41,7 @@ class App extends Component {
         <ErrorBoundary>
           
           <Route exact path="/" component={Landing} />
+          <Route exact path="/songs" component={SongListPage} />
           <Route path="/songs/:songid" component={SongListPage} />
           <Route path="/create" component={CreateASong} />
         </ErrorBoundary>  

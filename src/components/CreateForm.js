@@ -1,8 +1,82 @@
 import React from 'react';
 import Keymenu from "./Keymenu";
+import config from '../config';
+import SongsContext from '.././context/SongsContext';
 
 class CreateFrom extends React.Component {
-  state = {  }
+    constructor(props) {
+        super(props)
+            this.state = { 
+                title: {
+                    value: '',
+                    touched: false
+                  },
+                content: {
+                    value: '',
+                    touched: false
+                },
+                songkey: {
+                    value: '',
+                    touched: false
+                }
+
+                
+            };
+        }
+        static contextType = SongsContext;
+
+        updateTitle(title) {
+
+            this.setState({
+                title: {value: title, touched: true}
+            });
+        }
+    
+        updateContent(content) {
+            this.setState({
+                content: {value: content, touched: true}
+            });
+        }
+
+
+  handleSubmit(event){
+    event.preventDefault();
+    
+    const title = this.state.title.value;
+    const content = this.state.content.value;
+    // const songId = this.state.songId.value;
+    const songkey = this.state.songkey.value;
+
+   // potentially submit these values to the server here
+    const data = {
+        title,
+        songkey,
+        // songId,
+        content,
+      };
+      
+  
+      fetch(`${config.API_ENDPOINT}/songs`, {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      }).then(res => {
+        if (!res.ok) {
+          throw new Error(`Error with POST request: ${res}`);
+        }
+        return res.json();
+      })
+      .then((resp) => {
+        // this.context.addSong(resp);
+        console.log(this.context)
+        this.props.history.push('/songs');
+      })
+      .catch(err => {
+        console.log(err.message);
+      });
+}
   render() { 
     return ( 
       <form className="CreateSong" onSubmit={e => this.handleSubmit(e)}>
@@ -15,7 +89,9 @@ class CreateFrom extends React.Component {
                     className="AddTitle__control"
                     name="add-song-name" 
                     id="add-song-name"
+                    onChange={e => this.updateTitle(e.target.value)}
                     required/>
+                    {this.state.title.touched}
                 <Keymenu label={'Select A Key'}/>
                 <label htmlFor="add-song-content">Lyrics *</label>
                     <textarea
@@ -24,7 +100,9 @@ class CreateFrom extends React.Component {
                         className="AddSong__control"
                         name="add-song-content" 
                         id="add-song-content"
+                        onChange={e => this.updateContent(e.target.value)}
                         required/>
+                        {this.state.content.touched}
                 </div>
                 
 

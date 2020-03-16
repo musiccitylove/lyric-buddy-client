@@ -6,11 +6,12 @@ import CreateForm from '../../components/CreateForm';
 class CreateASong extends React.Component {
   state = {  }
   render() { 
+    console.log(this.props)
     return ( 
       <div>
         <BackButton />
         <h1>Create A Song Rendering</h1>
-        <CreateForm />
+        <CreateForm history={this.props.history}/>
 
       </div>
      );
