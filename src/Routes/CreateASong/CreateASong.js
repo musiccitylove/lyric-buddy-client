@@ -9,7 +9,6 @@ class CreateASong extends React.Component {
     console.log(this.props)
     return ( 
       <div>
-        <BackButton />
         <h1>Create A Song Rendering</h1>
         <CreateForm history={this.props.history}/>
 

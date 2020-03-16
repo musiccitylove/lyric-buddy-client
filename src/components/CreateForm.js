@@ -2,6 +2,7 @@ import React from 'react';
 import Keymenu from "./Keymenu";
 import config from '../config';
 import SongsContext from '.././context/SongsContext';
+import  BackButton  from "./BackButton";
 
 class CreateFrom extends React.Component {
     constructor(props) {
@@ -108,9 +109,7 @@ class CreateFrom extends React.Component {
 
         
                 <div className="CreateSong__button__group">
-                    <button type="reset" className="CreateSong__button">
-                        Cancel
-                    </button>
+                <BackButton lable={'cancel'}/>
                     <button 
                         type="submit" 
                         className="CreateSong__button"
