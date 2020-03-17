@@ -36,12 +36,20 @@ class App extends Component {
     });
 };
 
+handleDeleteSong = songId => {
+  this.setState({
+      songs: this.state.songs.filter(song => song.id !== songId)
+  });
+};
+
 
   render() {
     const { songs } = this.state;
     const value = {
       songs,
-      addSong: this.handleAddSong
+      addSong: this.handleAddSong,
+      deleteSong: this.handleDeleteSong
+
 
     }
 

@@ -3,7 +3,19 @@ import  Signup from '../../components/Signup';
 import  Signin from '../../components/Signin';
 
 class Landing extends React.Component {
-  state = {  }
+  state = { 
+    location: {},
+    history: {
+      push: () => {},
+    },
+   }
+
+   handleLoginSuccess = () => {
+    const { location, history } = this.props
+    const destination = (location.state || {}).from || '/'
+    history.push(destination)
+  }
+  
   render() { 
     return ( 
     <div>
@@ -12,15 +24,15 @@ class Landing extends React.Component {
       </header>
       <section className="description">
         <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. E
-        xcepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          Lyric Buddy is designed to help you take down your song ideas fast so you don't miss a beat.
+          Log in and start writing your next master piece. 
+          You can create a new song in any key you'd like, and you can also filter your songs by key so you can easily access them in a writing session.
+          More features to come soon!
         </p>
       </section>
       <div className="landingForms">
         <Signin />
-        <Signup />
+        {/* <Signup /> */}
       </div> 
     </div>
 
