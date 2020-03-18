@@ -6,7 +6,9 @@ import './SongListPage.css'
 import Header from '../../components/Header'
 
 class SongListPage extends React.Component {
-  state = {  }
+  state = { 
+    
+   }
   static contextType = SongsContext;
   render() { 
     // this.context.songs
@@ -16,26 +18,27 @@ class SongListPage extends React.Component {
     return ( 
       <div className= 'FullView'>
         <Header />
-      <section className='SongList'>
-        <ul>
-          {this.context.songs.map(song =>
-            <li key={song.id}>
-              <Listitem
+      <div className='songs-body'>
+      <section className='song_list_grid'>
+        <ul className='song_list'>
+          {this.context.songs.map(song => {
+              return <Listitem
+                key={song.id}
                 id={song.id}
                 title={song.title}
-                songkey={song.key}
+                songkey={song.songkey}
                 content={song.content}
               />
-            </li>
-          )}
+          })}
         </ul>
       </section>
-      <section className='FullSong'>
+      {/* <section className='full-song'>
         <Songview 
           song={song}
           
         />
-      </section>
+      </section> */}
+      </div>
       </div>
      );
   }

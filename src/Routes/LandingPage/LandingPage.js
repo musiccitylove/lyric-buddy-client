@@ -32,7 +32,10 @@ class Landing extends React.Component {
           More features to come soon!
         </p>
       </section>
-      <Link className='button'>Let's get started!</Link>
+      <Link 
+      className='button'
+      to='/songs'
+      >Let's get started!</Link>
     </div>
 
 

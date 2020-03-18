@@ -1,4 +1,98 @@
 .FullView {
-display: flex;
+display: grid;
 flex-direction: row;
+}
+
+.header{
+  background-color: #1E9965;
+  width: 100%; 
+  display: grid;
+  /* grid-auto-flow: column; */
+  /* align-items: center; */
+  /* justify-content: space-between; */
+  height: 7%;
+  gap: 0.5rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.songs-body{
+  /* margin-top: 10%; */
+  display: flex;
+  flex-direction: row;
+  align-content: stretch;
+  background-color: white;
+  justify-content: space-between;
+}
+
+.full-song{
+  width: 100%;
+}
+
+h1{
+  /* grid-column: span 2 / auto; */
+  color: white;
+  
+  margin-top: auto;
+  margin-bottom: auto;
+  text-align: center;
+}
+
+.key_menu{
+  text-align: center;
+}
+
+
+.create_button{
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  border-radius: 6px;
+  background-color: #FBE646;
+  text-decoration: none;
+  color: black;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.create_button:hover{
+  background-color: #FBC34D;
+}
+
+.logout_button{
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  border-radius: 6px;
+  background-color: #FBE646;
+  text-decoration: none;
+  color: black;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.logout_button:hover{
+  background-color: #FBC34D;
+}
+
+.song_list_grid{
+  display: grid;
+}
+
+.song_list{
+ list-style: none;
+ padding-left: 0px;
+}
+
+.song{
+  text-decoration: none;
 }
