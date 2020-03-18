@@ -7,7 +7,7 @@ class SongView extends React.Component {
     if(!this.props.song){
       return (
         <div>
-          loading
+          ...
         </div>
       )
     }

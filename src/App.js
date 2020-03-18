@@ -1,11 +1,15 @@
 import React, {Component} from 'react';
-import {Route} from 'react-router-dom';
+import {Route, Switch } from 'react-router-dom';
 import Landing from './Routes/LandingPage/LandingPage'
 import SongListPage from './Routes/SongListPage/SongListPage'
 import config from './config';
 import ErrorBoundary from './ErrorBoundary';
 import SongsContext from './context/SongsContext';
-import CreateASong from './Routes/CreateASong/CreateASong'
+import CreateASong from './Routes/CreateASong/CreateASong';
+import PrivateRoute from './Utils/PrivateRoute';
+import PublicOnlyRoute from './Utils/PublicOnlyRoute';
+import NotFoundPage from './Routes/NotFoundPage/NotFoundPage';
+import SigninPage from "./Routes/SigninPage/SigninPage";
 
 class App extends Component {
     state = {
@@ -56,11 +60,15 @@ handleDeleteSong = songId => {
     return(
       <SongsContext.Provider value={value}>
         <ErrorBoundary>
+          <Switch>
           
-          <Route exact path="/" component={Landing} />
-          <Route exact path="/songs" component={SongListPage} />
-          <Route path="/songs/:songid" component={SongListPage} />
-          <Route path="/create" component={CreateASong} />
+            <Route exact path="/" component={Landing} />
+            <PublicOnlyRoute path={'/login'} component={SigninPage} />
+            <PrivateRoute exact path="/songs" component={SongListPage} />
+            <PrivateRoute path="/songs/:songid" component={SongListPage} />
+            <PrivateRoute path="/create" component={CreateASong} />
+            <Route component={NotFoundPage} />
+          </Switch>
         </ErrorBoundary>  
       </SongsContext.Provider> 
     )

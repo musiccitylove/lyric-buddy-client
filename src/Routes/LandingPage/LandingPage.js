@@ -1,6 +1,7 @@
 import React from 'react';
-import  Signup from '../../components/Signup';
-import  Signin from '../../components/Signin';
+import { Link } from 'react-router-dom';
+import './LandingPage.css'
+
 
 class Landing extends React.Component {
   state = { 
@@ -14,11 +15,12 @@ class Landing extends React.Component {
     const { location, history } = this.props
     const destination = (location.state || {}).from || '/'
     history.push(destination)
+    console.log(this.props)
   }
-  
+
   render() { 
     return ( 
-    <div>
+    <div className='body'>
       <header>
         <h1>Welcome to Lyric-Buddy</h1>
       </header>
@@ -30,10 +32,7 @@ class Landing extends React.Component {
           More features to come soon!
         </p>
       </section>
-      <div className="landingForms">
-        <Signin />
-        {/* <Signup /> */}
-      </div> 
+      <Link className='button'>Let's get started!</Link>
     </div>
 
 
