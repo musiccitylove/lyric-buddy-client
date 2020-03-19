@@ -39,6 +39,12 @@ class CreateFrom extends React.Component {
             });
         }
 
+        updateSongkey(songkey) {
+          this.setState({
+              songkey: {value: songkey, touched: true}
+          });
+      }
+
 
   handleSubmit(event){
     event.preventDefault();
@@ -93,7 +99,10 @@ class CreateFrom extends React.Component {
                     onChange={e => this.updateTitle(e.target.value)}
                     required/>
                     {this.state.title.touched}
-                <Keymenu label={'Select A Key'}/>
+                <Keymenu 
+                label={'Select A Key'}
+                onChange={e => this.updateSongkey(e.target.value)}
+                />
                 <label htmlFor="add-song-content">Lyrics *</label>
                     <textarea
                         rows="5"

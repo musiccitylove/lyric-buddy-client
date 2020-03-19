@@ -7,7 +7,12 @@ class Keymenu extends React.Component {
      <div className= 'key_menu'>
         <label htmlFor="song_keys">{this.props.label}</label>
 
-        <select id="song_keys">
+        <select 
+        id="song_keys"
+        onChange={this.props.onChange}
+        
+        >
+        <option value="Chromatic">Chromatic</option>
           <option value="C/Am">C/Am</option>
           <option value="C#/A#m">C#/A#m</option>
           <option value="D/Bm">D/Bm</option>
