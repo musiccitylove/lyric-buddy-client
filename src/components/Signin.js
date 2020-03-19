@@ -16,7 +16,7 @@ class Signin extends React.Component {
     const { user_name, password } = ev.target
     
     console.log('Signin submitted')
-    console.log( user_name.value, password.value )
+    // console.log( user_name.value, password.value )
 
     AuthApiService.postLogin({
       user_name: user_name.value,
