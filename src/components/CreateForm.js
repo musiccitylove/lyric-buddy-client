@@ -17,7 +17,7 @@ class CreateFrom extends React.Component {
                     touched: false
                 },
                 songkey: {
-                    value: '',
+                    value: 'Chromatic',
                     touched: false
                 }
 

@@ -8,14 +8,14 @@ class Listitem extends React.Component {
 
    handleClick = () => {
      this.setState({
-       collapse: !this.state.collapsed
+       collapsed: !this.state.collapsed
      })
+     
    }
   
   render() { 
-
-    const songInfoClass = this.state.collapsed ? ' song-info-collapsed' : ''; 
-
+    console.log(this.state.collapsed)
+    const songInfoClass = this.state.collapsed ? ' song_info_collapsed' : ''; 
     return ( 
       <li className='song_div'>
         <h2 
@@ -26,7 +26,7 @@ class Listitem extends React.Component {
             {this.props.title}<br></br>
             {this.props.songkey}
         </h2>
-        <div className={`song-info${songInfoClass}`}>
+        <div className={`song_info${songInfoClass}`}>
           <h4 className='Song__title'>
               {this.props.title} lyrics<br></br> 
               {/* {this.props.songkey}    */}
