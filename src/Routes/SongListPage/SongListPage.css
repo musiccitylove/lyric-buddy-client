@@ -13,6 +13,10 @@ flex-direction: row;
   height: 7%;
   gap: 0.5rem;
   grid-template-columns: repeat(2, 1fr);
+  max-width: 1000px;
+  justify-self: center;
+
+
 }
 
 .songs-body{
@@ -31,14 +35,21 @@ flex-direction: row;
 h1{
   /* grid-column: span 2 / auto; */
   color: white;
-  
+  font-size: calc(32px + (64 - 32) * ((100vw - 375px) / (1600 - 300))); 
   margin-top: auto;
   margin-bottom: auto;
   text-align: center;
 }
 
+.main_header{
+  text-align: left;
+}
+
 .key_menu{
   text-align: center;
+  max-width: 215px; 
+  min-width: 140px;
+  justify-self: right;
 }
 
 
@@ -57,6 +68,9 @@ h1{
   text-decoration: none;
   color: black;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  max-width: 215px; 
+  min-width: 140px;
+  justify-self: right;
 }
 
 .create_button:hover{
@@ -78,6 +92,9 @@ h1{
   text-decoration: none;
   color: black;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  max-width: 215px;
+  min-width: 140px;
+  justify-self: left;
 }
 
 .logout_button:hover{
@@ -103,7 +120,8 @@ h1{
 }
 
 .song_info{
-  display: none;
+  max-height: 0;
+  transition: 0.5s ease;
   background-color: white;
   width: 100%;
   text-align: center;
@@ -111,7 +129,8 @@ h1{
 }
 
 .song_info_collapsed{
-  display: unset;
+  max-height: 600px;
+  transition: 0.5s ease;
 }
 
 .song_div{
@@ -137,6 +156,7 @@ h1{
 } 
 .song_div:hover{
   background-color: #15885A;
+  transform: scale(1.05);
 }
 
 .song_title{

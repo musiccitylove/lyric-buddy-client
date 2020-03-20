@@ -50,6 +50,10 @@ h3{
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
+.CreateSong__button:hover, .back_button:hover{
+  background-color: #FBC34D;
+}
+
 /* Style inputs, select elements and textareas */
 input[type=text], select, textarea{
   width: 100%;

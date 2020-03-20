@@ -12,21 +12,21 @@ class Header extends React.Component {
   render() { 
     return ( 
       <header className='header'>
-        <Link 
-        className='logout_button'
-        onClick={this.handleLogoutClick}
-          to='/'>
-          Logout</Link>
-      <CreateButton />
-      <h1>CoWrite19 
+        
+      <h1 className='main_header'>CoWrite19 
       <span role="img" aria-label="virus">🦠</span>
         </h1>
       
       <Keymenu 
       label={'Sort By Key'}
       onChange={e => this.props.onChange(e.target.value)}
-      
-      />        
+      />   
+      <Link 
+        className='logout_button'
+        onClick={this.handleLogoutClick}
+          to='/'>
+          Logout</Link>
+      <CreateButton />     
     </header>
      );
   }
