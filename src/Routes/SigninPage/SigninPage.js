@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import  Signup from '../../components/Signup';
 import  Signin from '../../components/Signin';
+import './SigninPage.css'
 
 
 export default class SigninPage extends Component {

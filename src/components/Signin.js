@@ -37,6 +37,8 @@ class Signin extends React.Component {
   render() {
     const { error } = this.state
     return (
+      <div>
+        <h1>Sign in and join the party!</h1>
       <form
         className='SigninForm'
         onSubmit={this.handleSubmitJwtAuth}
@@ -65,10 +67,13 @@ class Signin extends React.Component {
             id='SigninForm__password?'>
           </input>
         </div>
-        <button type='submit'>
+        <button 
+        className='signin_button'
+        type='submit'>
           Signin
         </button>
       </form>
+      </div>
     )
   }
 }

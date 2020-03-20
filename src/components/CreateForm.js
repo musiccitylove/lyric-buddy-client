@@ -87,10 +87,12 @@ class CreateFrom extends React.Component {
   render() { 
     return ( 
       <form className="CreateSong" onSubmit={e => this.handleSubmit(e)}>
-                <h2>Create A New Song</h2>
+                <h3>Enter and title and lyrics below</h3>
                 <div className="CreateSong__hint">* required field</div>  
                 <div className="form-group">
+                <div class="col-25">
                 <label htmlFor="add-title">Song Title *</label>
+                </div>
                 <input 
                     type="text" 
                     className="AddTitle__control"
@@ -103,9 +105,11 @@ class CreateFrom extends React.Component {
                 label={'Select A Key'}
                 onChange={e => this.updateSongkey(e.target.value)}
                 />
+                <div class="col-25">
                 <label htmlFor="add-song-content">Lyrics *</label>
+                </div>
                     <textarea
-                        rows="5"
+                        rows="7"
                         cols="33"
                         className="AddSong__control"
                         name="add-song-content" 

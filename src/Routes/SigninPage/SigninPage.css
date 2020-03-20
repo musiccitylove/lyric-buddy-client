@@ -1,0 +1,48 @@
+.signin_button{
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  border-radius: 6px;
+  background-color: #FBE646;
+  text-decoration: none;
+  color: black;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+/* Style inputs, select elements and textareas */
+input, select, textarea{
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+/* Style the label to display next to the inputs */
+label{
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+} 
+
+.SigninForm {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  /* background-color: #f2f2f2; */
+  padding: 20px;
+  max-width: 400px;
+  margin: auto;
+}
+
+.red{
+  font-size: 18px;
+  color: #FBE646;
+  text-shadow: black;
+}

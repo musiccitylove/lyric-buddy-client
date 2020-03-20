@@ -18,9 +18,15 @@ class Header extends React.Component {
           to='/'>
           Logout</Link>
       <CreateButton />
-      <h1>My Songs</h1>
+      <h1>CoWrite19 
+      <span role="img" aria-label="virus">🦠</span>
+        </h1>
       
-      <Keymenu label={'Sort By Key'}/>        
+      <Keymenu 
+      label={'Sort By Key'}
+      onChange={e => this.props.onChange(e.target.value)}
+      
+      />        
     </header>
      );
   }

@@ -7,21 +7,31 @@ import Header from '../../components/Header'
 
 class SongListPage extends React.Component {
   state = { 
-    
+    filterkey: null
    }
+
+   filterByKey = (songkey) => {
+    this.setState({
+      filterkey: songkey
+    })
+    };
+ 
   static contextType = SongsContext;
   render() { 
+    console.log(this.state.filterkey)
     // this.context.songs
-    console.log(typeof this.props.match.params.songid)
-    const song = this.context.songs.find(song => song.id == this.props.match.params.songid );
-    console.log(song)
+    // const song = this.context.songs.find(song => song.id == this.props.match.params.songid );
     return ( 
       <div className= 'FullView'>
-        <Header />
+        <Header 
+        onChange={this.filterByKey}
+        />
       <div className='songs-body'>
       <section className='song_list_grid'>
         <ul className='song_list'>
-          {this.context.songs.map(song => {
+          {this.context.songs
+          //.filter(song => song.songkey === this.state.filterkey )
+          .map(song => {
               return <Listitem
                 key={song.id}
                 id={song.id}
@@ -30,6 +40,7 @@ class SongListPage extends React.Component {
                 content={song.content}
               />
           })}
+          
         </ul>
       </section>
       {/* <section className='full-song'>
