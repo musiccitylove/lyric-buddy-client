@@ -15,8 +15,6 @@ class Signin extends React.Component {
     this.setState({error: null})
     const { user_name, password } = ev.target
     
-    console.log('Signin submitted')
-    // console.log( user_name.value, password.value )
 
     AuthApiService.postLogin({
       user_name: user_name.value,
@@ -79,25 +77,3 @@ class Signin extends React.Component {
 }
  
 export default Signin;
-
-// state = {  }
-// render() { 
-//   return ( 
-//   <div className="box">
-//     <label htmlFor="uname"><b>Username</b></label>
-//     <input type="text" placeholder="Enter Username" name="uname" required />
-
-//     <label htmlFor="psw"><b>Password</b></label>
-//     <input type="password" placeholder="Enter Password" name="psw" required />
-
-//     <button type="submit">Login</button>
-//     <label>
-//       <input type="checkbox" defaultChecked="" name="remember" 
-//       onChange= {console.log("Remember who you are")}
-//       /> Remember me
-//     </label>
-//  </div> 
-
-
-//   );
-// }

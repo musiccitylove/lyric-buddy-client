@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
 
 class Listitem extends React.Component {
   state = { 
@@ -29,7 +28,6 @@ class Listitem extends React.Component {
         <div className={`song_info${songInfoClass}`}>
           <h4 className='Song__title'>
               {this.props.title} lyrics<br></br> 
-              {/* {this.props.songkey}    */}
           </h4>
           <p className='song_lyrics'>{this.props.content} </p>
           <button

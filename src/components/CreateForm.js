@@ -77,7 +77,6 @@ class CreateFrom extends React.Component {
       })
       .then((resp) => {
         this.context.addSong(resp);
-        console.log(this.context)
         this.props.history.push('/songs');
       })
       .catch(err => {
@@ -90,7 +89,7 @@ class CreateFrom extends React.Component {
                 <h3>Enter and title and lyrics below</h3>
                 <div className="CreateSong__hint">* required field</div>  
                 <div className="form-group">
-                <div class="col-25">
+                <div className="col-25">
                 <label htmlFor="add-title">Song Title *</label>
                 </div>
                 <input 
@@ -105,7 +104,7 @@ class CreateFrom extends React.Component {
                 label={'Select A Key'}
                 onChange={e => this.updateSongkey(e.target.value)}
                 />
-                <div class="col-25">
+                <div className="col-25">
                 <label htmlFor="add-song-content">Lyrics *</label>
                 </div>
                     <textarea

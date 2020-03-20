@@ -13,11 +13,6 @@ class SongView extends React.Component {
     }
     return ( 
       <div className='Songview'> 
-            {/* <button
-          className='mobile_back'
-          type='button'
-          onClick={this.handleClickDelete}
-        >Back</button>  */}
       <h4 className='Song__title'>
           {this.props.song.title} lyrics<br></br> 
            {this.props.song.songkey}   

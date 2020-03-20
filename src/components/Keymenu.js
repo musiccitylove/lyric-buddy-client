@@ -5,7 +5,7 @@ class Keymenu extends React.Component {
   render() { 
     return (
      <div className= 'key_menu'>
-       <div class="col-25">
+       <div className="col-25">
         <label htmlFor="song_keys">{this.props.label}</label>
       </div>
         <select 
