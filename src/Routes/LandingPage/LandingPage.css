@@ -34,7 +34,9 @@ p{
   text-decoration: none;
   color: black;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  
+  max-width: 215px;
+  min-width: 140px;
+  align-self: center;
 }
 
 .button:hover{
