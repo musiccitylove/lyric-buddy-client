@@ -6,7 +6,7 @@ import Header from '../../components/Header'
 
 class SongListPage extends React.Component {
   state = { 
-    filterkey: null
+    filterkey: 'Chromatic'
    }
 
    filterByKey = (songkey) => {
@@ -17,6 +17,21 @@ class SongListPage extends React.Component {
  
   static contextType = SongsContext;
   render() { 
+
+    const songs = this.context.songs;
+    const filteredSongs = this.state.filterkey === 'Chromatic' ?
+      songs :
+      songs.filter(song => song.songkey === this.state.filterkey )
+    const songsJSX = filteredSongs.map(song => {
+      return <Listitem
+        key={song.id}
+        id={song.id}
+        title={song.title}
+        songkey={song.songkey}
+        content={song.content}
+      />
+  })
+
     return ( 
       <div className= 'FullView'>
         <Header 
@@ -25,17 +40,7 @@ class SongListPage extends React.Component {
       <div className='songs-body'>
       <section className='song_list_grid'>
         <ul className='song_list'>
-          {this.context.songs
-          //.filter(song => song.songkey === this.state.filterkey )
-          .map(song => {
-              return <Listitem
-                key={song.id}
-                id={song.id}
-                title={song.title}
-                songkey={song.songkey}
-                content={song.content}
-              />
-          })}
+          {songsJSX}
           
         </ul>
       </section>

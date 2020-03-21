@@ -29,7 +29,7 @@ class Listitem extends React.Component {
           <h4 className='Song__title'>
               {this.props.title} lyrics<br></br> 
           </h4>
-          <p className='song_lyrics'>{this.props.content} </p>
+          <pre className='song_lyrics'>{this.props.content} </pre>
           <button
               className='song__delete'
               type='button'

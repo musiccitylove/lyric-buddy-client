@@ -36,7 +36,7 @@ class Signin extends React.Component {
     const { error } = this.state
     return (
       <div>
-        <h1>Sign in and join the party!</h1>
+        <h1 className='signinHeader'>Sign in and join the party!</h1>
       <form
         className='SigninForm'
         onSubmit={this.handleSubmitJwtAuth}

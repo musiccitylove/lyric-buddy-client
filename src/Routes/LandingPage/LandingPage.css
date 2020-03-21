@@ -14,6 +14,9 @@ header{
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   padding-top: 20px;
 }
+.landingHeader{
+  text-shadow: 2px 4px black;
+}
 
 p{
    font-family: Georgia, 'Times New Roman', Times, serif ;
@@ -37,8 +40,24 @@ p{
   max-width: 215px;
   min-width: 140px;
   align-self: center;
+  box-shadow: 2.5px 5px black;
 }
 
 .button:hover{
   background-color: #FBC34D;
+}
+
+.description{
+  display: inline;
+  border-style: solid;
+  border-color: white;
+  border-width: 1px;
+  max-width: 600px;
+  align-self: center;
+  padding: 5px;
+  margin: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  box-shadow: 2.5px 5px black;
+  
 }

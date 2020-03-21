@@ -12,6 +12,8 @@ h3{
   align-items: center;
   border-radius: 5px;
   padding: 20px;
+  max-width: 750px;
+  margin: auto;
 }
 
 .back_button{
@@ -29,6 +31,7 @@ h3{
   text-decoration: none;
   color: black;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  box-shadow: 2.5px 5px black;
 }
 
 .CreateSong__button{
@@ -46,10 +49,18 @@ h3{
   text-decoration: none;
   color: black;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  box-shadow: 2.5px 5px black;
 }
 
 .CreateSong__button:hover, .back_button:hover{
   background-color: #FBC34D;
+}
+
+.CreateSong__button:active, .back_button:active{
+  background-color: #F69F44;
+  box-shadow: 2.5px 5px rgb(255, 255, 255);
+  transform: translateY(4px);
+
 }
 
 /* Style inputs, select elements and textareas */
@@ -71,5 +82,9 @@ input[type=text], select, textarea{
 .CreateSong__button__group{
   display: flex;
   justify-content: space-between;
+  margin-top: 10px;
+}
+.createHeader{
+  text-shadow: 2px 4px black;
 }
 

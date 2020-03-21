@@ -7,7 +7,7 @@ class CreateASong extends React.Component {
   render() { 
     return ( 
       <div>
-        <h1>Create A New Masterpiece</h1>
+        <h1 className='createHeader'>Create A New Masterpiece</h1>
         <CreateForm history={this.props.history}/>
 
       </div>

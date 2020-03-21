@@ -1,0 +1,8 @@
+{
+  "version": 2,
+  "name": "lyric-buddy",
+  "routes": [
+      { "handle": "filesystem" },
+      { "src": "/.*", "dest": "/index.html" }
+  ]
+}
