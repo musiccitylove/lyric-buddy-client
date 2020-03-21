@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "alias": "charlesdpulliam1-lyric-buddy",
   "name": "lyric-buddy",
   "routes": [
       { "handle": "filesystem" },
